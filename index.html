@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html>
+    <style>
+        .top-buffer { margin-top:20px; }
+    </style>
+<body>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+
+
+
+</body>
+</html>
+
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+    <title>Starter Template for Bootstrap</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/starter-template/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="starter-template.css" rel="stylesheet">
+  </head>
+
+  <body>
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="#">SENSE</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About SENSE</a>
+          </li>
+          
+ 
+      </div>
+    </nav>
+</header>
+    <main role="main" class="container text-center ">
+        <br>
+        <h1 class="mt-5">The SENSE calculator </h1>
+        <h2>Should you implant?</h2>
+        <br>
+      </main>
+    
+  <div class="container">
+   
+    <div class="row top-buffer">
+      <div class="col-sm">
+        Select Lesion extent:
+        <select id="Lesion" class="form-control">
+          <option value="0">Focal</option>
+          <option value="-2.2636">No lesion</option>
+          <option value="-2.1494">All other lesions</option>
+        </select>
+      </div>
+      <div class="col-sm">
+        Select Ictal EEG onset extent:
+        <select id="Ictal"  class="form-control">
+          <option value=0.8442>Focal/lobar</option>
+          <option value=0>bilateral synchronously</option>
+          <option value=-0.8124>none/multilobar/diffuse</option>
+        </select>
+      </div>
+      <div class="col-sm" >
+        Select Interictal EEG extent:
+        <select id="Interictal" class="form-control">
+          <option value=1.8056>no IEDs</option>
+          <option value=0>bilateral independent</option>
+          <option value=1.1807>all others</option>
+        </select>
+      </div>
+    </div>
+      <div class="row top-buffer">
+        <div class="col-sm">
+      Select Localizing semiology:
+      <select id="semiology"  class="form-control">
+        <option value=0.8489>Strong</option>
+        <option value=0>Weak/not localizing</option>
+    
+      </select>
+    </div>
+      <div class="col-sm">
+        Select Neuropsychological deficit:
+        <select id="Neuropsychological" class="form-control" >
+          <option value=0>Localizing</option>
+          <option value=-0.2554>Not localizing</option>
+          <option value=1.155>No deficit</option>
+        </select>
+      </div>
+    </div>
+    <div class="row top-buffer">
+        <div class="col-sm">
+        <button  type="button" class="btn btn-primary" onclick="myFunction()">Get score</button>
+    </div>
+    <div class="col-sm"> Final Score  <p class="text-nowrap" style="width: 8rem;" id="demo"></p>
+    </div>
+     
+
+  
+
+      </div>
+      <br><br>
+      <h2>Personal information</h2>
+      <form>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Email address</label>
+          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+        
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Full Name</label>
+          <textarea class="form-control" id="name" rows="1"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Institution</label>
+          <textarea class="form-control" id="instituion" rows="2"></textarea>
+        </div>
+      
+      </form>
+  <br><br> 
+     
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+
+    <script>
+        function myFunction() {
+          var x = Number(document.getElementById("Lesion").value)  + Number(document.getElementById("Ictal").value)  +
+         Number(document.getElementById("Interictal").value)  + Number( document.getElementById("semiology").value) 
+          + Number(document.getElementById("Neuropsychological").value)  ;
+          
+          document.getElementById("demo").innerHTML = x;
+        }
+        </script>

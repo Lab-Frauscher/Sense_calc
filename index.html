@@ -65,7 +65,7 @@
    
     <div class="row top-buffer">
       <div class="col-sm">
-        Select Lesion extent:
+        Select lesion extent:
         <select id="Lesion" class="form-control">
           <option value="0">Focal</option>
           <option value="-2.2636">No lesion</option>
@@ -73,7 +73,7 @@
         </select>
       </div>
       <div class="col-sm">
-        Select Ictal EEG onset extent:
+        Select ictal EEG onset extent:
         <select id="Ictal"  class="form-control">
           <option value=0.8442>Focal/lobar</option>
           <option value=0>bilateral synchronously</option>
@@ -81,7 +81,7 @@
         </select>
       </div>
       <div class="col-sm" >
-        Select Interictal EEG extent:
+        Select interictal EEG extent:
         <select id="Interictal" class="form-control">
           <option value=1.8056>no IEDs</option>
           <option value=0>bilateral independent</option>
@@ -91,7 +91,7 @@
     </div>
       <div class="row top-buffer">
         <div class="col-sm">
-      Select Localizing semiology:
+      Select localizing semiology:
       <select id="semiology"  class="form-control">
         <option value=0.8489>Strong</option>
         <option value=0>Weak/not localizing</option>
@@ -99,7 +99,7 @@
       </select>
     </div>
       <div class="col-sm">
-        Select Neuropsychological deficit:
+        Select neuropsychological deficit:
         <select id="Neuropsychological" class="form-control" >
           <option value=0>Localizing</option>
           <option value=-0.2554>Not localizing</option>
@@ -111,32 +111,12 @@
         <div class="col-sm">
         <button  type="button" class="btn btn-primary" onclick="myFunction()">Get score</button>
     </div>
-    <div class="col-sm"> Final Score  <p class="text-nowrap" style="width: 8rem;" id="demo"></p>
+    <div class="col-sm"> Final Score:  <p class="text-nowrap" style="width: 8rem;" id="demo">, this result has to be interpreted in the clinical context </p>
     </div>
      
 
   
 
-      </div>
-      <br><br>
-      <h2>Personal information</h2>
-      <form>
-        <div class="form-group">
-          <label for="exampleFormControlInput1">Email address</label>
-          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-        </div>
-        
-        <div class="form-group">
-          <label for="exampleFormControlTextarea1">Full Name</label>
-          <textarea class="form-control" id="name" rows="1"></textarea>
-        </div>
-        <div class="form-group">
-          <label for="exampleFormControlTextarea1">Institution</label>
-          <textarea class="form-control" id="instituion" rows="2"></textarea>
-        </div>
-      
-      </form>
-  <br><br> 
      
 
 
@@ -154,7 +134,14 @@
           var x = Number(document.getElementById("Lesion").value)  + Number(document.getElementById("Ictal").value)  +
          Number(document.getElementById("Interictal").value)  + Number( document.getElementById("semiology").value) 
           + Number(document.getElementById("Neuropsychological").value)  ;
-          
+          if x>3.18
+            {
+                x= 'Focal ('+ x +')';
+            }
+            else
+            {
+                 x= 'Non-Focal ('+ x +')';
+            }
           document.getElementById("demo").innerHTML = x;
         }
         </script>

@@ -134,13 +134,13 @@
           var x = Number(document.getElementById("Lesion").value)  + Number(document.getElementById("Ictal").value)  +
          Number(document.getElementById("Interictal").value)  + Number( document.getElementById("semiology").value) 
           + Number(document.getElementById("Neuropsychological").value)  ;
-          if x>3.18
+          if (x>3.17)
             {
-                x= 'Focal ('+ x +')';
+                x= 'Focal ('+ x.toString(); +')';
             }
             else
             {
-                 x= 'Non-Focal ('+ x +')';
+                 x= 'Non-Focal ('+ x.toString(); +')';
             }
           document.getElementById("demo").innerHTML = x;
         }

@@ -111,7 +111,7 @@
         <div class="col-sm">
         <button  type="button" class="btn btn-primary" onclick="myFunction()">Get score</button>
     </div>
-    <div class="col-sm"> Final Score:  <p class="text-nowrap" style="width: 8rem;" id="demo">, this result has to be interpreted in the clinical context </p>
+    <div class="col-sm"> Final Score:  <p class="text-nowrap" style="width: 8rem;" id="demo"></p>
     </div>
      
 
@@ -136,12 +136,13 @@
           + Number(document.getElementById("Neuropsychological").value)  ;
           if (x>3.17)
             {
-                x= 'Focal ('+ x.toString(); +')';
+                x= 'Focal ('+ x.toString() +')';
             }
             else
             {
-                 x= 'Non-Focal ('+ x.toString(); +')';
+                 x= 'Non-Focal ('+ x.toString() +')';
             }
+             x= x +' , this result has to be interpreted in the clinical context' 
           document.getElementById("demo").innerHTML = x;
         }
         </script>

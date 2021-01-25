@@ -137,6 +137,7 @@
           + Number(document.getElementById("Neuropsychological").value)  ;
      x =   Math.exp(x-0.3135)/(Math.exp(x-0.3135)+1);
      x=x.toFixed(3) *100;
+       x=x.toFixed(1);
           if (x>37.6)
             {
                 x= 'Focal ('+ x.toString() +')';
